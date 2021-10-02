@@ -15,9 +15,7 @@ output:
 
 # Preview
 
-[![img](preview.png)]
-
-# (https://github.com/mlombardi6/R-CV/blob/master/CV.pdf)
+[![img](preview.png)](https://github.com/mlombardi6/awesome-template/blob/main/awesome-template.pdf)
 
 
 
