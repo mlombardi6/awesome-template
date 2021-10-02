@@ -1,0 +1,106 @@
+---
+name: Irène
+surname: Curie
+position: "Chemist | Physicist | Politician"
+address: "Université de Paris"
+phone: +1 22 3333 4444
+email: Irene.Curie@ens.fr
+github: IreneCurie
+linkedin: Irene-Curie
+date: "`r format(Sys.time(), '%B %Y')`"
+footer: "Irène's Biography"
+aboutme: \ "I earned awards and prizes for historically important research, producing evidence of positrons and neutrons and discovering artificial radioactivity. I died for overexposure to radiation.\"
+headcolor: 990000
+linestretch: 1.25
+output:
+  pdf_document:
+    latex_engine: xelatex
+    template: "awesome.tex"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(results='markdown', 
+                      warning=F, 
+                      echo=F,
+                      message=F, 
+                      fig.width=6,
+                      fig.height=3, 
+                      dev.args = list(pointsize=14), 
+                      dpi=75,
+                      fig.path = "./figures/",
+                      fig.pos = "ht", out.extra = ""
+)
+
+```
+
+
+#  Biography 
+
+\ 
+
+## Early life and education 
+
+Irène was born in Paris, France, in 1897 and was the first of Marie and Pierre's two daughters. Her sister was Eve. They lost their father early on in 1906 due to a horse-drawn wagon incident and Marie was left to raise them. Education was important to Marie and Irène's education began at a school near the Observatory. This school was chosen because it had a more challenging curriculum than the school nearby the Curie's home. 
+
+In 1906, it was obvious Irène was talented in mathematics and her mother chose to focus on that instead of public school. Marie joined forces with a number of eminent French scholars, including the prominent French physicist Paul Langevin to form "The Cooperative", which included a private gathering of nine students that were children of the most distinguished academics in France. Each contributed to educating these children in their respective homes. The curriculum of The Cooperative was varied and included not only the principles of science and scientific research but such diverse subjects as Chinese and sculpture and with great emphasis placed on self-expression and play. Irène studied in this environment for about two years.
+
+Irène and her sister Ève were sent to Poland to spend the summer with their Aunt Bronya (Marie's sister) when Irène was thirteen. Irène's education was so rigorous that she still had a German and trigonometry lesson every day of that break. Irène re-entered a more orthodox learning environment by going back to high school at the Collège Sévigné in central Paris until 1914. She then went onto the Faculty of Science at the Sorbonne to complete her baccalaureate, until 1916 when her studies were interrupted by World War I. 
+
+\ 
+
+## Research 
+
+As she neared the end of her doctorate in 1924, Irène Curie was asked to teach the precision laboratory techniques required for radiochemical research to the young chemical engineer Frédéric Joliot, whom she would later wed. From 1928 Joliot-Curie and her husband Frédéric combined their research efforts on the study of atomic nuclei. In 1932, Joliot-Curie and her husband Frédéric had full access to Marie's polonium. Experiments were done using gamma rays to identify the positron. Though their experiments identified both the positron and the neutron, they failed to interpret the significance of the results and the discoveries were later claimed by Carl David Anderson and James Chadwick respectively. These discoveries would have secured greatness indeed, as together with J. J. Thomson's discovery of the electron in 1897, they finally replaced John Dalton's model of atoms as solid spherical particles.
+
+However, in 1933, Joliot-Curie and her husband were the first to calculate the accurate mass of the neutron. The Joliot-Curies continued trying to get their name into the scientific community; in doing so they developed a new theory from an interesting experiment they conducted. During an experiment bombarding aluminium with alpha rays, they discovered that only protons were detected. Based on the undetectable electron and positron pair, they proposed that the protons changed into neutrons and positrons. Later in October 1933, this new theory was presented to the Seventh Solvay Conference. The Solvay Conferences consisted of prominent scientists in the physics and chemistry community. Irene and her husband presented their theory and results to their fellow scientists, but they received criticism of their finding from most of the 46 scientists attending. However they were able to build on the controversial theory later on.
+
+In 1934, the Joliot-Curies finally made the discovery that sealed their place in scientific history. Building on the work of Marie and Pierre Curie, who had isolated naturally occurring radioactive elements, the Joliot-Curies realised the alchemist's dream of turning one element into another: creating radioactive nitrogen from boron, radioactive isotopes of phosphorus from aluminium, and silicon from magnesium. Irradiating the natural stable isotope of aluminium with alpha particles (i.e. helium nuclei) resulted in an unstable isotope of phosphorus: 27Al + 4He → 30P + 1n. This discovery is formally known as positron emission or beta decay, where a proton in the radioactive nucleus changes to a neutron and releases a positron and an electron neutrino. By then, the application of radioactive materials for use in medicine was growing and this discovery allowed radioactive materials to be created quickly, cheaply, and plentifully. The Nobel Prize for chemistry in 1935 brought with it fame and recognition from the scientific community and Joliot-Curie was awarded a professorship at the Faculty of Science.
+
+Irène's group pioneered research into radium nuclei that led a separate group of German physicists, led by Otto Hahn, Lise Meitner, and Fritz Strassman, to discover nuclear fission: the splitting of the nucleus itself, emitting vast amounts of energy. Lise Meitner's now-famous calculations actually disproved Irène's results to show that nuclear fission was possible.
+
+In 1948, using work on nuclear fission, the Joliot-Curies along with other scientists created the first French nuclear reactor. The Joliot-Curies were a part of the organization in charge of the project, the Atomic Energy Commission, Commissariat à l'énergie atomique (CEA). Irène was the commissioner of the CEA and Irène's husband, Frédéric, was the director of the CEA. The reactor, Zoé (Zéro énergie Oxyde et Eau lourde) used nuclear fission to generate five kilowatts of power. This was the beginning of nuclear energy as a source of power for France. Because of the work of the Joliot-Curies, France in 2020 generates approximately 75% of its electricity from nuclear energy. France also exports surplus energy to other European countries.
+
+Years of working so closely with radioactive materials finally caught up with Joliot-Curie and she was diagnosed with leukemia. She had been accidentally exposed to polonium when a sealed capsule of the element exploded on her laboratory bench in 1946. Treatment with antibiotics and a series of operations relieved her suffering temporarily but her condition continued to deteriorate. Despite this, Joliot-Curie continued to work and in 1955 drew up plans for new physics laboratories at the Orsay Faculty of Sciences, which is now a part of the Paris-Saclay University, south of Paris.
+
+(Source: [wikipedia](https://en.wikipedia.org/wiki/Ir%C3%A8ne_Joliot-Curie))
+
+\newpage
+
+```{r IreneCurieTimeline}
+library(kableExtra)
+
+data.frame( Year = c(1897,1914,1916,1918,1925,1932,1935,1935,1937,1939,1940,1951,1956), 
+            Event = c(
+  "Born in Paris, France",
+  "Completed high school studies at the Collège Sévigné in Paris",
+  "Completed baccalaureate in science at the University of Paris",
+  "Completed baccalaureate in mathematics and physics at the University of Paris",
+  "Received Ph.D. in Chemistry from the University of Paris",
+  "Awarded the Matteucci Medal",
+  "Awarded the Knight of Legion of Honour",
+  "Awarded The Nobel Prize in Chemistry for her discovery of artificial radioactivity",
+  "Awarded a honorary degree by Ohio's Oberlin College in the USA",
+  "Awarded the Officer of the Legion of Honour",
+  "Barnard a Gold Medal for Meritorious Service to Science",
+  "Awarded a honorary degree by Jagiellonian University in Krakow",
+  "Died for overexposure to radiation"
+)) %>%
+  kable( format= "latex",
+         booktabs= T,
+         longtable=T,
+         linesep="",
+         caption = "Irène Curie's Timeline") %>%
+  kable_styling(latex_options =  c("striped", "HOLD_position"),
+                full_width = F, 
+                )
+# https://shethoughtit.ilcml.com/biography/irene-joliot-curie/
+```
+
+
+
+
+
+
+
+

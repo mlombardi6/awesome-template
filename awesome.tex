@@ -1,0 +1,339 @@
+
+\documentclass[11pt, a4paper]{article}
+
+
+% --------------------------------------------------------------
+% ------------------ Packages ------------------
+% --------------------------------------------------------------
+
+\usepackage{academicons} % Add support of academia icons
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{amssymb} 
+\RequirePackage{array} % Needed to make fixed length table
+\usepackage{babel}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{caption}
+\usepackage{color} 
+\usepackage{colortbl}
+\usepackage{currfile-abspath}
+\RequirePackage{enumitem} % Needed to handle list environment
+\usepackage{eso-pic}
+\RequirePackage{etoolbox} % Needed to use a toolbox of programming tools
+\usepackage{fancyhdr} % Needed to make header & footer effeciently
+\usepackage{float}[h]
+\usepackage[T1]{fontenc}
+\RequirePackage[quiet]{fontspec} % Needed to manage fonts
+\usepackage{geometry}
+% \usepackage[margin=1in]{geometry}\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{hhline}
+\RequirePackage{hyperref} % Needed to deal hyperlink
+\RequirePackage{ifxetex} % Needed to use \ifxetex-\else-\fi statement
+\usepackage{ifluatex}
+\usepackage{import} 
+\usepackage{lipsum} 
+\usepackage{lmodern}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{makeidx} 
+\usepackage{microtype}
+\usepackage{morefloats} 
+\usepackage{multicol} 
+\usepackage{multirow}
+\usepackage{overpic}
+\RequirePackage{parskip} % Needed to deal a paragraphs
+\usepackage{pdflscape}
+\RequirePackage{ragged2e} % Needed to handle text alignment
+\urlstyle{same} % disable monospaced font for URLs
+\RequirePackage{setspace} % Needed to change line spacing in specific environment
+\usepackage{siunitx}
+\usepackage{subfiles}
+\usepackage{tabularx}
+\RequirePackage[skins]{tcolorbox} % Needed for the photo ID
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{titling} 
+\usepackage[normalem]{ulem}
+\RequirePackage{unicode-math} % Needed to manage math fonts
+\usepackage{verbatim}
+\usepackage{wallpaper}
+\usepackage{wrapfig}
+\RequirePackage{xifthen} % Needed to use \if-\then-\else statement
+\usepackage{xurl} % add URL line breaks if available
+\RequirePackage{xcolor} % Needed to manage colors
+% \usepackage{xwatermark}
+
+% (https://github.com/posquit0/latex-fontawesome)
+\defaultfontfeatures{Extension = .otf}
+\RequirePackage{fontawesome}
+\RequirePackage[default,opentype]{sourcesanspro}
+
+% Needed to deal hyperlink
+% \RequirePackage[hidelinks,unicode]{hyperref}
+\hypersetup{
+  pdftitle={},
+  pdfauthor={},
+  pdfsubject={},
+  pdfkeywords={},
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+\defaultfontfeatures{Ligatures=TeX} % To support LaTeX quoting style
+
+
+% --------------------------------------------------------------
+% ------------------ Configuration for colors ------------------
+% --------------------------------------------------------------
+
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+\colorlet{awesome}{awesome-red}
+
+% Boolean value to switch section color highlighting
+\newbool{acvSectionColorHighlight}
+\setbool{acvSectionColorHighlight}{true}
+
+
+
+
+
+% --------------------------------------------------------------
+% ------------------ Configuration for layout ------------------
+% --------------------------------------------------------------
+
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    % headheight=1cm,
+    top=1.5cm,
+    bottom=2.0cm,
+    footskip=0.5cm
+  }
+
+
+%% Header & Footer
+% Set offset to each header and footer
+\fancyhfoffset{0em}
+% Remove head rule
+\renewcommand{\headrulewidth}{0pt}
+% Clear all header & footer fields
+\fancyhf{}
+
+
+% Enable if you want to make header or footer using fancyhdr
+\pagestyle{fancy}
+
+
+%------------------------------------------------------------------
+%------------------------   Set font ------------------------------
+%------------------------------------------------------------------
+
+\newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\fontdir
+
+\newfontfamily\headerfont[
+  Path=\@fontdir,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+]{Roboto}
+
+\newfontfamily\headerfontlight[
+  Path=\@fontdir,
+  UprightFont=*-Thin,
+  ItalicFont=*-ThinItalic,
+  BoldFont=*-Medium,
+  BoldItalicFont=*-MediumItalic,
+]{Roboto}
+
+
+
+%-------------------------------------------------------------------------------
+%                Settings
+%-------------------------------------------------------------------------------
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+
+% Awesome section color
+% \def\@sectioncolor#1#2#3{
+%   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}
+% }
+
+% Use to draw horizontal line with specific thickness
+% \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+
+
+%  Configure Styles 
+\newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\sourcesanspro\scshape\color{lighttext} #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\sourcesanspro\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\sourcesanspro\scshape\textcolor{text}{#1}}}
+\newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\sourcesansprolight\upshape\color{text}}
+
+% Other commands
+\newcommand{\comp}{\hspace{0pt}\nolinebreak-\hspace{0pt}} %command for compound words
+
+
+%--------------------------------------------------------
+%	 ---------------- BEGIN DOCUMENT ----------------------
+%--------------------------------------------------------
+
+
+$if(highlighting-macros)$  % highlighting environments, e.g. Shaded
+$highlighting-macros$
+$endif$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+
+
+\begin{document}
+
+$if(headcolor)$
+\definecolor{awesome}{HTML}{$headcolor$}
+$else$
+\colorlet{awesome}{awesome-red}
+$endif$
+
+
+%	 ---------------- HEADER SECTION ---------------------- 
+  \begin{center}
+
+    \fontsize{32pt}{5cm}{
+    \vspace{-20em}
+    \headerfontlight\color{graytext}{$name$}
+    \bfseries\headerfont\color{text}{$surname$}}\\[{.4mm}]
+    
+    \color{awesome}{\fontsize{7.6pt}{1em}{ \sourcesanspro\scshape $position$}}\\[{.4mm}]
+    \color{lighttext}{\fontsize{8pt}{1em}{ \headerfont\itshape $address$}}\\[{.5mm}]
+    
+    \fontsize{6.8pt}{1em}\headerfont\color{text}{
+    
+            $if(phone)$
+            \selectfont\faMobile\space $phone$ \acvHeaderSocialSep
+            $endif$
+            \faEnvelope\space {\color{lighttext}{ $email$}}\acvHeaderSocialSep
+            $if(github)$
+            \faGithub\space \href{https://github.com/$github$}{\color{lighttext}{ $github$}} \acvHeaderSocialSep
+            $endif$
+            $if(linkedin)$
+            \faLinkedinSquare\space \href{https://linkedin.com/in/$linkedin$}{\color{lighttext}{ $linkedin$}} }\\[{5.5mm}]
+            $endif$
+
+    $if(aboutme)$
+    \color{darktext}{\fontsize{9pt}{1em}{ \sourcesanspro\itshape $aboutme$}}
+    $endif$
+
+\end{center}
+  
+  % Add header line 
+\color{gray}\leavevmode\hrule height 0.9pt \hfill\kern0pt
+
+
+%	 ---------------- FOOTER ---------------------- 
+\vspace{3mm}
+\fancyfoot[L]{\fontsize{8pt}{1em}{\sourcesanspro\scshape\color{lighttext} $date$}}
+\fancyfoot[C]{\fontsize{8pt}{1em}{\sourcesanspro\scshape\color{lighttext} $footer$}}
+\fancyfoot[R]{\fontsize{8pt}{1em}{\sourcesanspro\scshape\color{lighttext} \thepage}}
+
+
+%-------------------------------------------------------------------------------
+%	-------------- Body Section
+%------------------------------------------------------------------------------
+
+\renewcommand{\section}[1]{
+	\vspace{3mm} % empty space to allocate before paragraph header
+	% \sectionstyle{#1}
+	\fontsize{16pt}{2em}{\sourcesanspro\scshape\bfseries\color{text}{#1}}  	% \sectionstyle{#1}
+	% \phantomsection
+	% \color{gray}\leavevmode\leaders\hrule height 0.9pt \hfill\kern0pt % Draw horizontal line with specific thickness
+}
+
+% Define a subsection for CV (Level 2 header)
+\renewcommand{\subsection}[1]{%
+	\vspace{2.5mm}
+	\vspace{-3mm}
+	\fontsize{12pt}{2em}{\sourcesanspro\scshape\bfseries\textcolor{text}{#1}} 	% \subsectionstyle{#1}
+	% \phantomsection
+}
+
+% Define a subsection for CV (Level 3 header)
+\renewcommand{\subsubsection}[1]{%
+	\vspace{2.5mm}
+	\vspace{-3mm}
+	\fontsize{12pt}{1em}{\sourcesanspro\scshape\textcolor{text}{#1}} % \subsectionstyle{#1}
+	% \phantomsection
+}
+
+% % Define a paragraph for CV
+\newenvironment{cvparagraph}{%
+  \vspace{2.5mm}
+  \vspace{-3mm}
+  \fontsize{9pt}{2em}{\sourcesansprolight\upshape\color{text}}  % \paragraphstyle
+}{%
+  \par
+  \vspace{2mm}
+}
+
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+%  \tolerance controls how much white space TeX considers to be "acceptable"
+% \emergencystretch configures TeX to use at most 10pt of additional white space per line in order to avoid underfull/overfull lines.
+\tolerance=2000 \emergencystretch=10pt
+
+$if(linestretch)$
+\setstretch{$linestretch$}
+$endif$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+
+
+
+\end{document}

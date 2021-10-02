@@ -4,7 +4,7 @@
 
 This repository aims to reproduce headers and styles from Awesome CV's while allowing more direct control on the tex code that runs underneath. 
 
-This is achieved by directing the output to `awesome.tex`:
+This is achieved by directing the output to `awesome.tex` which controls format and styles:
 
 ```
 output:
@@ -12,6 +12,12 @@ output:
     latex_engine: xelatex
     template: "awesome.tex"
 ```
+
+# Preview
+
+[![img](preview.png)]
+
+# (https://github.com/mlombardi6/R-CV/blob/master/CV.pdf)
 
 
 
