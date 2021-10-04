@@ -17,7 +17,7 @@ output:
     latex_engine: xelatex
     template: "awesome.tex"
 ---
-
+ 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(results='markdown', 
