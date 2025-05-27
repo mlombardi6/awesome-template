@@ -244,21 +244,31 @@ $endif$
     \bfseries\headerfont\color{text}{$surname$}}\\[{.4mm}]
     
     \color{awesome}{\fontsize{7.6pt}{1em}{ \sourcesanspro\scshape $position$}}\\[{.4mm}]
+    
+    $if(address)$
     \color{lighttext}{\fontsize{8pt}{1em}{ \headerfont\itshape $address$}}\\[{.5mm}]
+    $endif$
     
     \fontsize{6.8pt}{1em}\headerfont\color{text}{
     
             $if(phone)$
-            \selectfont\faMobile\space $phone$ \acvHeaderSocialSep
+            \selectfont\faMobile\space $phone$
             $endif$
-            \faEnvelope\space {\color{lighttext}{ $email$}}\acvHeaderSocialSep
+            $if(email)$
+            \acvHeaderSocialSep
+            \faEnvelope\space {\color{lighttext}{ $email$}}
+            $endif$
             $if(github)$
-            \faGithub\space \href{https://github.com/$github$}{\color{lighttext}{ $github$}} \acvHeaderSocialSep
+            \acvHeaderSocialSep
+            \faGithub\space \href{https://github.com/$github$}{\color{lighttext}{ $github$}} 
             $endif$
             $if(linkedin)$
-            \faLinkedinSquare\space \href{https://linkedin.com/in/$linkedin$}{\color{lighttext}{ $linkedin$}} }\\[{5.5mm}]
+            \acvHeaderSocialSep
+            \faLinkedinSquare\space \href{https://linkedin.com/in/$linkedin$}{\color{lighttext}{ $linkedin$}} 
             $endif$
-
+            }\\[{5.5mm}]
+            
+    
     $if(aboutme)$
     \color{darktext}{\fontsize{9pt}{1em}{ \sourcesanspro\itshape $aboutme$}}
     $endif$
